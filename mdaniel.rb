@@ -1,5 +1,6 @@
-require 'sinatra'
+require 'bundler'
+Bundler.require
 
 get '/' do
-  "Sup homes!"
+  haml :index
 end

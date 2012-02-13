@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title
+      = @title.nil? ? "" : @title + " - "
+      mDaniel.net
+  %body
+    .content
+      = yield
