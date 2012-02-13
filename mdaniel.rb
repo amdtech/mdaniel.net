@@ -3,6 +3,12 @@ Bundler.require
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 
+before do
+  unless request.host == "www.mdaniel.net" || request.host == "localhost"
+    redirect "http://www.mdaniel.net" + request.path_info, 301
+  end
+end
+
 get '/' do
   haml :index
 end
