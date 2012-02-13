@@ -14,6 +14,7 @@ get '/' do
 end
 
 get '/:page' do |page|
+  page = "index" if page == "index.php"
   @title = page.capitalize
   begin
     haml page.to_sym
