@@ -4,6 +4,30 @@
     %title
       = @title.nil? ? "" : @title + " - "
       mDaniel.net
-  %body
-    .content
+    %link(rel="stylesheet" href="/css/bootstrap.min.css")
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"}
+  %body{:style => "padding-top: 50px"}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %ul.nav
+            %li
+              %a.brand{:href => "/"}
+                mDaniel.net
+            %li
+              %a{:href => "/jokes"}
+                Jokes
+            %li
+              %a{:href => "/months"}
+                Months
+            %li
+              %a{:href => "/sex"}
+                Sex
+            %li
+              %a{:href => "http://gallery.mdaniel.net/"}
+                Pictures
+            %li
+              %a{:href => "http://asterisk.mdaniel.net/"}
+                Asterisk
+    .container
       = yield

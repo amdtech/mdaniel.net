@@ -1,12 +1,14 @@
 require 'bundler'
 Bundler.require
 
+set :public_folder, File.dirname(__FILE__) + '/public'
+
 get '/' do
   haml :index
 end
 
 get '/:page' do |page|
-  pass if page == "favicon.ico"
+  @title = page.capitalize
   begin
     haml page.to_sym
   rescue Errno::ENOENT
