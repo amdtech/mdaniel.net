@@ -7,6 +7,8 @@ before do
   unless request.host == "www.amdte.ch" || request.host == "localhost"
     redirect "http://www.amdte.ch" + request.path_info, 301
   end
+
+  redirect "http://about.me/amdtech", 301
 end
 
 get '/' do
